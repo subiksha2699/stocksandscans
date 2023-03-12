@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState, useCallback ,useMemo} from "react";
 import { fetchWrapper } from "../services/fetchWrapper";
 import Stack from "@mui/material/Stack";
 import Chip from '@mui/material/Chip';
@@ -7,12 +7,14 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
+import Button from '@mui/material/Button';
 import { MdOutlineNavigateNext } from "react-icons/md";
 import Divider from '@mui/material/Divider';
 import { getrgba } from "../utility/utilityFunction";
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from "react-router-dom";
 import "../App.css";
+
 
 const Stocks = (props) => {
 
@@ -30,9 +32,15 @@ const Stocks = (props) => {
 
     }, [])
 
-
+    // const incrementCount = () => {
+    //     setCount(prev => prev+1)
+    // }
+    
+    
     return (
+
         <Box className="containerPaper boxshadowprop">
+            {/* <Button onClick={() => incrementCount()}>Click</Button> */}
             <List
                 sx={{ width: '100%', maxHeight: "30rem", maxWidth: "30rem", overflowY: "overlay", bgcolor: 'background.paper', borderRadius: "15px" }}
             >
@@ -66,3 +74,4 @@ const Stocks = (props) => {
 }
 
 export default Stocks;
+

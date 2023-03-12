@@ -47,12 +47,12 @@ const SubCriteria = (props) => {
 
     }, [])
 
-    function getTextVar(text, variable) {
+    function getTextVar(text, variable,currIndex) {
         // debugger
         let words = text.split(" ");
         return words.map((word) => {
             if (word.charAt(0) === "$")
-                return <a style={{ cursor: "pointer", color: "blue" }}>
+                return <a style={{ cursor: "pointer", color: "blue" }} onClick={() => navigate(`/variable/${word}/${currIndex}/${index}`)}>
                     {`${variable[word].default_value ? variable[word].default_value : variable[word].values[0]} `}</a>
             else
                 return <span>{`${word} `}</span>
@@ -83,7 +83,7 @@ const SubCriteria = (props) => {
                             >
                                 {item.type === "plain_text" ?
                                     <ListItemText sx={{ color: "#424242" }} primary={item.text} /> :
-                                    <ListItemText>{getTextVar(item.text, item.variable)}</ListItemText>}
+                                    <ListItemText>{getTextVar(item.text, item.variable,index)}</ListItemText>}
 
                             </ListItem>
                             <Divider />

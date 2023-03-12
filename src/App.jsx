@@ -10,8 +10,10 @@ import {
 } from "react-router-dom";
 
 import FileLoader from './components/FileLoader';
+
 const Stocks = lazy(() => import("./components/Stocks"));
 const SubCriteria = lazy(() => import("./components/SubCriteria"));
+const Variables =  lazy(() => import("./components/Variables"));
 
 
 
@@ -24,6 +26,7 @@ function App() {
             <Routes>
               <Route path="/stocks" exact element={<Stocks />}></Route>
               <Route path="/subcriteria/:index" element={<SubCriteria />}></Route>
+              <Route path="/variable/:index/:param1/:varIndex" element={<Variables />}></Route>
               <Route path="*" element={<Navigate to="/stocks" replace />} />
             </Routes>
           </Suspense>

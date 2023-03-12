@@ -5,5 +5,6 @@ export function getrgba(color) {
   rgbcolor = rgbcolor.split("");
   rgbcolor.splice(-1, 0, ",", "0", ".", "2");
   rgbcolor = rgbcolor.join("");
+  console.log(rgbcolor);
   return rgbcolor;
 }
